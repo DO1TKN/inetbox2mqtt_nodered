@@ -3,4 +3,4 @@ human interface to control Truma Combi heatings with node-red via inetbox2mqtt b
 
 
 
-many thanks to mc0110, https://github.com/mc0110/inetbox2mqtt !
+many thanks to mc0110, https://github.com/mc0110/inetbox2mqtt and the https://github.com/muccc/WomoLIN project!
