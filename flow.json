@@ -1,5 +1,13 @@
 [
     {
+        "id": "ffbdda214baee7c2",
+        "type": "tab",
+        "label": "Truma",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "65c077f8439c8722",
         "type": "mqtt in",
         "z": "ffbdda214baee7c2",
@@ -25,7 +33,7 @@
         "type": "debug",
         "z": "ffbdda214baee7c2",
         "name": "debug 9",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -520,7 +528,7 @@
         "label": "Temp.",
         "tooltip": "",
         "group": "551910eaceb43644",
-        "order": 6,
+        "order": 9,
         "width": "12",
         "height": "1",
         "passthru": true,
@@ -546,7 +554,7 @@
         "z": "ffbdda214baee7c2",
         "name": "",
         "group": "551910eaceb43644",
-        "order": 5,
+        "order": 8,
         "width": "3",
         "height": "1",
         "passthru": false,
@@ -583,8 +591,8 @@
         "correl": "",
         "expiry": "",
         "broker": "f20f528ff838a1f8",
-        "x": 550,
-        "y": 1060,
+        "x": 540,
+        "y": 1340,
         "wires": []
     },
     {
@@ -593,11 +601,11 @@
         "z": "ffbdda214baee7c2",
         "name": "",
         "group": "551910eaceb43644",
-        "order": 2,
+        "order": 5,
         "width": "5",
         "height": "1",
         "passthru": false,
-        "label": "Fan off",
+        "label": "Heating off",
         "tooltip": "",
         "color": "",
         "bgcolor": "",
@@ -607,8 +615,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 80,
-        "y": 980,
+        "x": 90,
+        "y": 1260,
         "wires": [
             [
                 "170a7ba4dedc153d"
@@ -621,7 +629,7 @@
         "z": "ffbdda214baee7c2",
         "name": "",
         "group": "551910eaceb43644",
-        "order": 3,
+        "order": 6,
         "width": "5",
         "height": "1",
         "passthru": false,
@@ -635,8 +643,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 80,
-        "y": 1020,
+        "x": 70,
+        "y": 1300,
         "wires": [
             [
                 "170a7ba4dedc153d"
@@ -649,7 +657,7 @@
         "z": "ffbdda214baee7c2",
         "name": "",
         "group": "551910eaceb43644",
-        "order": 4,
+        "order": 7,
         "width": "5",
         "height": "1",
         "passthru": false,
@@ -663,8 +671,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 80,
-        "y": 1060,
+        "x": 70,
+        "y": 1340,
         "wires": [
             [
                 "170a7ba4dedc153d"
@@ -678,7 +686,7 @@
         "d": true,
         "group": "551910eaceb43644",
         "name": "Inetbox2mqtt",
-        "order": 13,
+        "order": 17,
         "width": "15",
         "height": "12",
         "url": "http://192.168.112.147/",
@@ -710,6 +718,277 @@
                 "0cf50beb35710c8a"
             ]
         ]
+    },
+    {
+        "id": "d94bca973eab288a",
+        "type": "mqtt out",
+        "z": "ffbdda214baee7c2",
+        "name": "service/truma/set/target_temp_water",
+        "topic": "service/truma/set/target_temp_water",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "f20f528ff838a1f8",
+        "x": 560,
+        "y": 1480,
+        "wires": []
+    },
+    {
+        "id": "675e0f2ba97f168e",
+        "type": "ui_button",
+        "z": "ffbdda214baee7c2",
+        "name": "",
+        "group": "551910eaceb43644",
+        "order": 11,
+        "width": "6",
+        "height": "1",
+        "passthru": false,
+        "label": "Water heating off",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "0",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 110,
+        "y": 1470,
+        "wires": [
+            [
+                "d94bca973eab288a"
+            ]
+        ]
+    },
+    {
+        "id": "a13b940864b830e2",
+        "type": "ui_button",
+        "z": "ffbdda214baee7c2",
+        "name": "",
+        "group": "551910eaceb43644",
+        "order": 12,
+        "width": "3",
+        "height": "1",
+        "passthru": false,
+        "label": "eco",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "40",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 70,
+        "y": 1510,
+        "wires": [
+            [
+                "d94bca973eab288a"
+            ]
+        ]
+    },
+    {
+        "id": "ac4392bf674dd1f4",
+        "type": "ui_button",
+        "z": "ffbdda214baee7c2",
+        "name": "",
+        "group": "551910eaceb43644",
+        "order": 13,
+        "width": "3",
+        "height": "1",
+        "passthru": false,
+        "label": "high",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "60",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 70,
+        "y": 1550,
+        "wires": [
+            [
+                "d94bca973eab288a"
+            ]
+        ]
+    },
+    {
+        "id": "399cbfb4cb7dedbb",
+        "type": "ui_button",
+        "z": "ffbdda214baee7c2",
+        "name": "",
+        "group": "551910eaceb43644",
+        "order": 14,
+        "width": "3",
+        "height": "1",
+        "passthru": false,
+        "label": "boost",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "200",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 70,
+        "y": 1590,
+        "wires": [
+            [
+                "d94bca973eab288a"
+            ]
+        ]
+    },
+    {
+        "id": "072ec4f502ac760d",
+        "type": "mqtt out",
+        "z": "ffbdda214baee7c2",
+        "d": true,
+        "name": "service/truma/set/heating_mode // Fan",
+        "topic": "service/truma/set/heating_mode",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "f20f528ff838a1f8",
+        "x": 580,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "8e7072d44d5c181e",
+        "type": "ui_button",
+        "z": "ffbdda214baee7c2",
+        "name": "",
+        "group": "551910eaceb43644",
+        "order": 2,
+        "width": "5",
+        "height": "1",
+        "passthru": false,
+        "label": "Fan off",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "off",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 90,
+        "y": 1040,
+        "wires": [
+            [
+                "072ec4f502ac760d"
+            ]
+        ]
+    },
+    {
+        "id": "3c2d94cd3026d9fe",
+        "type": "ui_button",
+        "z": "ffbdda214baee7c2",
+        "name": "",
+        "group": "551910eaceb43644",
+        "order": 3,
+        "width": "5",
+        "height": "1",
+        "passthru": false,
+        "label": "FAN eco",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "eco",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 100,
+        "y": 1080,
+        "wires": [
+            [
+                "072ec4f502ac760d"
+            ]
+        ]
+    },
+    {
+        "id": "9b300adb351e4c1e",
+        "type": "ui_button",
+        "z": "ffbdda214baee7c2",
+        "name": "",
+        "group": "551910eaceb43644",
+        "order": 4,
+        "width": "5",
+        "height": "1",
+        "passthru": false,
+        "label": "FAN high",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "high",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 100,
+        "y": 1120,
+        "wires": [
+            [
+                "072ec4f502ac760d"
+            ]
+        ]
+    },
+    {
+        "id": "2164f58bf5217989",
+        "type": "ui_button",
+        "z": "ffbdda214baee7c2",
+        "name": "",
+        "group": "551910eaceb43644",
+        "order": 15,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "clear chart",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "rr",
+        "className": "",
+        "icon": "",
+        "payload": "[]",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "str",
+        "x": 120,
+        "y": 780,
+        "wires": [
+            [
+                "0367962bfa0f3a7e"
+            ]
+        ]
+    },
+    {
+        "id": "8e59465e3424ff8a",
+        "type": "ui_spacer",
+        "z": "ffbdda214baee7c2",
+        "name": "spacer",
+        "group": "551910eaceb43644",
+        "order": 10,
+        "width": "15",
+        "height": "1"
     },
     {
         "id": "f20f528ff838a1f8",
